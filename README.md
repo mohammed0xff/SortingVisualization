@@ -87,3 +87,76 @@ cmake . && make
 * Follow [lazy foo](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/windows/msvc2019/index.php) guide to set up SDL2 on Visual Studio.
 * Press `F5` to build and run the program.
 
+
+
+## Contribution 
+#### 1. Drive from `SortVisualizer` class overriding the `sort` function, adding pointers and main sort functions.
+```cpp  
+namespace Visualizer {
+
+    class SelectionSortVisulaizer : public SortVisualizer
+    {
+    public:
+        SelectionSortVisulaizer(SDL_Renderer* renderer);
+	      ~SelectionSortVisulaizer();
+
+        void sort() override;
+
+    private:
+        void addPointers() override;
+	      void selectionSort();
+
+        // pointers used for accessing the array
+        int idxOnePtr;
+        int idxTwoPtr;
+        int min_idxPtr;
+
+    };
+
+};
+
+```
+
+#### 2. Implement your sort function.
+* place the rendering function `render()` wherever there is a change to the array.
+* `incArrayAccess()`, `incComparisons()` to count comparisons and array accesses over the array.
+ 
+```cpp  
+void SelectionSortVisulaizer::sort()
+{
+    selectionSort();
+}
+
+void SelectionSortVisulaizer::selectionSort()
+{
+    for (idxOnePtr = startElement; idxOnePtr < endElement; idxOnePtr++)
+    {
+        min_idxPtr = idxOnePtr;
+        for (idxTwoPtr = idxOnePtr + 1; idxTwoPtr < endElement; idxTwoPtr++) {
+
+            if (m_arr[idxTwoPtr] < m_arr[min_idxPtr])
+                min_idxPtr = idxTwoPtr;
+            incArrayAccess(2);
+            incComparisons(3);
+            render();
+        }
+        std::swap(m_arr[min_idxPtr], m_arr[idxOnePtr]);
+        incArrayAccess(2);
+    }
+}
+
+```
+#### 3. add the pointers refrences to `m_pointers` array with a chosen color.
+```cpp
+void SelectionSortVisulaizer::addPointers() {
+    m_pointers.push_back(std::pair<int&, Color>(idxOnePtr, GREEN));
+    m_pointers.push_back(std::pair<int&, Color>(idxTwoPtr, GREEN));
+    m_pointers.push_back(std::pair<int&, Color>(min_idxPtr, BLUE));
+}
+```
+
+#### 4. Edit `Mianminu` class as well as the `SortVisualizer.psd` photoshop file to add your new sort algorithm to the main minu. <br/> if you can't do it just ask me and i will do it for you :D.
+#### 5. Any contrubutions are appreaciated, you can have as much fun as you want with this project <3.
+
+
+
