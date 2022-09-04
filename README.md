@@ -5,22 +5,40 @@ Sort ALgorithms Visualized with SDL2.
 ## Demo
 
 ### Merge sort
-![merge-sort](demo/merge-sort.gif)
+<p align="center">
+  <img src= "demo/merge-sort.gif" />
+</p>
 
 ### Bubble sort
-![bubble-sort](demo/bubble-sort.gif)
+<p align="center">
+  <img src= "demo/bubble-sort.gif" />
+</p>
 
 ### Selection sort
-![selection-sort](demo/selection-sort.gif)
+<p align="center">
+  <img src= "demo/selection-sort.gif" />
+</p>
 
 ### Insertion sort
-![insertion-sort](demo/insertion-sort.gif)
+<p align="center">
+  <img src= "demo/insertion-sort.gif" />
+</p>
 
 ### Quick sort
-![quick-sort](demo/quick-sort.gif)
+<p align="center">
+  <img src= "demo/quick-sort.gif" />
+</p>
 
 ### Heap sort
-![heap-sort](demo/heap-sort.gif)
+<p align="center">
+  <img src= "demo/heap-sort.gif" />
+</p>
 
 ### Main minu 
-![tutorial](demo/tutorial.gif)
+<p align="center">
+  <img src= "demo/tutorial.gif" />
+</p>
+
+
+
+
