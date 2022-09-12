@@ -159,4 +159,9 @@ void SelectionSortVisulaizer::addPointers() {
 #### 5. Any contrubutions are appreaciated, you can have as much fun as you want with this project <3.
 
 
+## To Do : 
+- [ ] Implement a `TextManager` class to seperate text rendering management from `SortVisualizer` class.
+- [ ] Implement an `EventHandler` class with ``` std::unordered_map<T, callback> ``` where `T` is an event.
+- [ ] Make text look prettier.
+- [ ] Add sound.
 
